@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   "mode": "jit",
   "darkMode": "class",
@@ -11,7 +12,9 @@ module.exports = {
     extend: {
       colors: {
         "grey": "#acada8",
-        "primary": "#09dba0",
+        "primary": "#0ea5e9",
+        "dark": "#103256",
+        "darker": "#061525",
         "info": "#0979db",
         "danger": "#ff6666",
         "warning": "#fac451",
