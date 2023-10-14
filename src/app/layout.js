@@ -1,3 +1,4 @@
+import { AosProvider, Footer, Header } from '@/components'
 import './globals.css'
 import { Titillium_Web, Exo_2 } from 'next/font/google'
 
@@ -13,7 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${titilium.className} ${exo2.className} min-h-screen flex flex-col`}>
+        <Header />
+        <AosProvider>
           {children}
+          <Footer />
+        </AosProvider>
       </body>
     </html>
   )
