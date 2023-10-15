@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${titilium.className} ${exo2.className} min-h-screen flex flex-col`}>
+      <body className={`${titilium.className} ${exo2.className} min-h-screen flex flex-col overflow-x-hidden`}>
         <Header />
         <AosProvider>
           {children}

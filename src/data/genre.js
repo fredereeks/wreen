@@ -1,0 +1,15 @@
+export const genre = [
+    { id: 18230, title: "Action", },
+    { id: 18231, title: "Comedy", },
+    { id: 18232, title: "Documentary", },
+    { id: 18233, title: "Drama", },
+    { id: 18234, title: "Fantasy", },
+    { id: 18235, title: "Horror", },
+    { id: 18236, title: "Musical", },
+    { id: 18237, title: "Mystery", },
+    { id: 18238, title: "Romance", },
+    { id: 18239, title: "Science ", },
+    { id: 18240, title: "Fiction", },
+    { id: 18241, title: "Thriller", },
+    { id: 18242, title: "Western", },
+]

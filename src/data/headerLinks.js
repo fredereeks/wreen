@@ -10,13 +10,15 @@ export const headerLinks = [
         id: 28927342831,
         title: 'Category',
         url: '/category',
-        sublinks: []
-    },
-    {
-        id: 28927342832,
-        title: 'Pricing',
-        url: '/pricing',
-        sublinks: []
+        sublinks: [
+            // {
+            //     id: 28927342832,
+            //     title: 'Action',
+            //     url: '/category/action',
+            //     sublinks: []
+            // },
+
+        ]
     },
     {
         id: 28927342833,

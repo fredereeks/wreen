@@ -1,18 +1,19 @@
+import { wreen_outdoortype } from '@/assets/images'
+import { ScriptCard } from '@/components'
+import Counter from '@/components/Counter'
+import { scripts } from '@/data'
 import Image from 'next/image'
-import { titilium, exo2 } from '@/app/styles/fonts'
 import Link from 'next/link'
-import { wreen_actionname, wreen_coffee_leaf } from '@/assets/images'
 import { IoNewspaperOutline, IoPeopleOutline, IoVideocamOutline } from 'react-icons/io5'
 // import wreen_videobg2 from "@/assets/videos/wreen_videobg2.mp4"
 
 export default function Home() {
   return (
     <main className="relative after-overlay">
-      <section className="bg-darker px-4 pt-20 min-h-screen relative after-overlay after:bg-darker/80">
+      <section className="bg-darker px-4 pt-20 min-h-screen relative after-overlay after:bg-gradient-to-b after:from-darker/80 after:via-darker/80 after:to-darker">
         <video autoPlay={true} controlsList='true' loop={true} controls={true} className="overlay object-cover">
-          <source src="/videos/wreen_videobg3.mp4" type="video/mp4" />
+          <source src="/videos/wreen_videobg2.mp4" type="video/mp4" />
         </video>
-        {/* <Image src={wreen_actionname} alt='Wreen Hero' className="overlay object-cover" /> */}
         <div className="container mx-auto grid md:grid-cols-2 relative z-20">
           <div className="py-20 flex flex-col justify-center gap-4">
             <div className="flex flex-col justify-center text-white">
@@ -22,8 +23,8 @@ export default function Home() {
             </div>
             <p className="text-sky-50 opacity-50 text-sm font-light leading-loose max-w-md">Fleen is the world&apos;s biggest meeting point for script writers and buyers to connect in a secure, seamless and purposeful manner for an exchange of talent and ideas for money and discovery</p>
             <div className="py-5 flex gap-3">
-              <Link href="/login" className="w-max bg-sky-500 hover:bg-slate-700 rounded-full text-white text-sm font-bold flex items-center py-3 px-6 md:px-9">Get Started</Link>
-              <Link href="/plans" className="w-max hover:bg-slate-700 bg-sky-50 text-sky-500 rounded-full hover:text-white text-sm font-bold flex items-center py-3 px-6 md:px-9">Show Plans</Link>
+              <Link href="/login" className="w-max bg-sky-500 hover:bg-slate-700 rounded-full text-white text-sm font-bold flex items-center py-3 px-9">Get Started</Link>
+              <Link href="/plans" className="w-max hover:bg-slate-700 bg-sky-50 text-sky-500 rounded-full hover:text-white text-sm font-bold flex items-center py-3 px-9">Show Plans</Link>
             </div>
           </div>
           <div className="font-exhibition p-5 text-white relative">
@@ -45,18 +46,15 @@ export default function Home() {
               [8234, <IoNewspaperOutline key={8234} className='text-xl sm:text-3xl md:text-4xl text-primary' />, "1,385", 'Scripts Sold'],
               [8235, <IoVideocamOutline key={8235} className='text-xl sm:text-3xl md:text-4xl text-primary' />, "2,171", 'Movie Produced'],
               [8236, <IoPeopleOutline key={8235} className='text-xl sm:text-3xl md:text-4xl text-primary' />, "7,409", 'Talents Admitted'],
-            ].map(([id, icon, total, text]) => (
+            ].map(([id, icon, total, text], i) => (
               <aside key={id} className="flex flex-col items-center text-center sm:gap-1">
                 <div className="w-10 sm:w-20 md:w-16 h-10 sm:h-20 md:h-16 rounded-lg grid place-items-center bg-primary/20">{icon}</div>
-                <h2 className="text-base sm:text-xl text-sky-800 font-bold">{total}</h2>
+                {/* <h2 className="text-base sm:text-xl text-sky-800 font-bold">{total}</h2> */}
+                <Counter key={id} className={'text-base sm:text-xl text-sky-800 font-bold'} end={total} speed={i === 0 ? 'slow' : 'fast'} tag={'+'} />
                 <p className="text-xs sm:text-sm text-primary font-light">{text}</p>
               </aside>
             ))
           }
-          {/* <div className="py-40 text-white relative shadow-lg overflow-hidden rounded-md">
-            <Image src={wreen_coffee_leaf} alt='Wreen Hero' className="overlay object-cover object-center" />
-          </div> */}
-
         </div>
       </section>
       <section className="py-20 bg-sky-500 relative px-4">
@@ -73,6 +71,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="py-10 bg-sky-50 relative px-4">
+        <div className="container mx-auto flex flex-col gap-5 py-5 relative z-20">
+          <div className="col-span-2 flex items-center justify-center gap-2 mx-auto py-5">
+            {
+              ["Action", "Comedy", "Documentary", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science", "Fiction", "Thriller"].map((genre, i) => (
+                <button key={i} className={`${i === 0 ? 'bg-dark text-white' : 'bg-white'} text-primary hover:bg-dark hover:text-white rounded-[2rem] py-2 px-5 cursor-pointer text-xs sm:text-sm shadow-xl hover:shadow-dark/40`}>{genre}</button>
+              ))
+            }
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-2">
+            {
+              scripts.map(script => (
+                <ScriptCard key={script.id} {...script} />
+              ))
+            }
+            {
+              scripts.map(script => (
+                <ScriptCard key={script.id} {...script} />
+              ))
+            }
+          </div>
+          {/* <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div> */}
+        </div>
+      </section>
+      {/* <section className="py-20 bg-white relative px-4">
+        <div className="container mx-auto grid md:grid-cols-2 py-10 relative z-20">
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
+          </div>
+        </div>
+      </section> */}
     </main>
   )
 }
