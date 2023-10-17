@@ -8,18 +8,24 @@ export const headerLinks = [
     },
     {
         id: 28927342831,
-        title: 'Category',
-        url: '/category',
-        sublinks: [
-            // {
-            //     id: 28927342832,
-            //     title: 'Action',
-            //     url: '/category/action',
-            //     sublinks: []
-            // },
-
-        ]
+        title: 'Scripts',
+        url: '/scripts',
+        sublinks: []
     },
+    // {
+    //     id: 28927342832,
+    //     title: 'Category',
+    //     url: '/category',
+    //     sublinks: [
+    //         // {
+    //         //     id: 28927342832,
+    //         //     title: 'Action',
+    //         //     url: '/category/action',
+    //         //     sublinks: []
+    //         // },
+
+    //     ]
+    // },
     {
         id: 28927342833,
         title: 'About',

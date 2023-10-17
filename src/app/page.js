@@ -5,6 +5,7 @@ import { scripts } from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IoNewspaperOutline, IoPeopleOutline, IoVideocamOutline } from 'react-icons/io5'
+import { FaChevronRight, FaClapperboard } from 'react-icons/fa6'
 // import wreen_videobg2 from "@/assets/videos/wreen_videobg2.mp4"
 
 export default function Home() {
@@ -57,7 +58,8 @@ export default function Home() {
           }
         </div>
       </section>
-      <section className="py-20 bg-sky-500 relative px-4">
+      <section className="py-20 bg-sky-500 relative px-4 overflow-hidden">
+        <FaClapperboard key={8234} scale={5} className='overlay text-primary shadow-xl shadow-sky-600 rotate-[40deg] opacity-50 left-[20%]' />
         <div className="container mx-auto grid md:grid-cols-2 py-10 relative z-20">
           <div className="flex flex-col justify-center gap-4">
             <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
@@ -71,7 +73,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-10 bg-sky-50 relative px-4">
+      <section className="py-10 bg-sky-50 relative px-4 overflow-x-hidden">
         <div className="container mx-auto flex flex-col gap-5 py-5 relative z-20">
           <div className="col-span-2 flex items-center justify-center gap-2 mx-auto py-5">
             {
@@ -80,18 +82,19 @@ export default function Home() {
               ))
             }
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-2">
             {
-              scripts.map(script => (
+              scripts.slice(0,9).map(script => (
                 <ScriptCard key={script.id} {...script} />
               ))
             }
             {
-              scripts.map(script => (
-                <ScriptCard key={script.id} {...script} />
-              ))
+              // scripts.map(script => (
+              //   <ScriptCard key={script.id} {...script} />
+              // ))
             }
           </div>
+          <Link href="/scripts" className="group flex justify-center items-center py-4 text-sm md:text-base text-primary w-max mx-auto px-5">See More <FaChevronRight className='group-hover:translate-x-2 ml-1 mt-[.1rem] text-xs transition-all duration-300' /></Link>
           {/* <div className="flex flex-col justify-center gap-4">
             <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
           </div>

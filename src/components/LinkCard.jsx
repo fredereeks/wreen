@@ -5,22 +5,17 @@ import Link from 'next/link'
 import { usePathname } from "next/navigation";
 
 
-const LinkCard = ({title, url, sublinks, fixed, navShow}) => {
+const LinkCard = ({title, url, sublinks, fixed}) => {
     const location = usePathname();
     const [activeLink, setActiveLink] = useState(false);
     useEffect(() => {
         location === url ? setActiveLink(true) : setActiveLink(false);
-        console.log({location, url, title, activeLink})
+        // console.log({location, url, title, activeLink})
         return () => {
             setActiveLink(false);
         } 
     },[location, url, title]);
 
-    
-    
-    // useEffect(() => {
-    //     window.scrollTo(0,0);
-    // },[location.pathname])
     
     if(sublinks.length > 0){
         return(

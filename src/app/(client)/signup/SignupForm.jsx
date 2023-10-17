@@ -53,8 +53,8 @@ export default function ContactForm({ handleSubmit }) {
                     <RegionDropdown country={country} disableWhenEmpty={true} value={region} onChange={value => setRegion(value)} name='state' key={9206} id='state' classes='outline-none py-2 px-4 border border-gray-300 rounded-md text-gray-600 text-sm bg-transparent focus-within:bg-transparent focus:bg-transparent placeholder-opacity-70' />
                 </div>
             </fieldset>
-            <button type="submit" className="rounded-full text-xs mt-2 py-3 px-6 sm:px-10 w-max shadow-md shadow-dark bg-dark text-white cursor-pointer">{pending ? 'Processing...' : 'Create Account'}</button>
-            <Link href={'/login'} className="sm:col-span-2 text-center text-base sm:text-lg text-slate-400">Have an Account already? <span className="underline">Login</span></Link>
+            <button type="submit" className="rounded-full text-sm mt-2 py-3 px-6 sm:px-10 w-max shadow-md shadow-dark bg-dark text-white cursor-pointer">{pending ? 'Processing...' : 'Create Account'}</button>
+            <Link href={'/login'} className="sm:col-span-2 text-center text-base text-slate-400">Have an Account already? <span className="underline">Login</span></Link>
         </form>
     )
 }

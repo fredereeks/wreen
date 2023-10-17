@@ -60,7 +60,7 @@ const handleSubmit = async (data) => {
         return { error: false, message: `Thank you for reaching our to us ${firstname} ${lastname}. Expect our reply soonest.`};
     } catch (error) {
         console.log({error})
-        return { error: true, message: `Something went wrong. We could not send the mail...due to ${error}`};
+        return { error: true, message: `Something went wrong. We could not send the mail...Please, try again`};
     }
 }
 
