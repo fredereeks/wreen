@@ -5,7 +5,6 @@ import React from 'react'
 import ScriptList from './ScriptList'
 
 export default function page() {
-  console.log({scripts})
   return (
     <main className="relative after-overlay">
       <ScriptList key={836} data={scripts} />

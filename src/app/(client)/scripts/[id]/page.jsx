@@ -19,7 +19,6 @@ export default async function page({ params: { id } }) {
     const authorImage = images[Math.floor(Math.random() * images.length)]
     const relatedScripts = scripts.filter(el => el.genre === data.genre && Number(data.id) !== el.id);
     const otherScripts = relatedScripts.length < 4 ? scripts.filter(el => el.genre !== data.genre).slice(0,(4-relatedScripts.length)) : []
-    console.log({totalRelated: relatedScripts.length, otherScripts: otherScripts.length})
 
     return (
         <main className="bg-darker flex flex-col gap-4 py-20 min-h-screen relative after-overlay after:bg-gradient-to-b after:from-darker/80 after:via-darker/80 after:to-darker">

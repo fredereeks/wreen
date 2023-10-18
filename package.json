@@ -2,6 +2,7 @@
   "name": "wreen",
   "version": "0.1.0",
   "private": true,
+  "prebuild": "node prebuild.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +17,7 @@
     "html-react-parser": "^4.2.2",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.29.4",
-    "next": "13.5.4",
+    "next": "13.4.19",
     "nodemailer": "^6.9.6",
     "prisma": "^5.4.2",
     "react": "^18",
