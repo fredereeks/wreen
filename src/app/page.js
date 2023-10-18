@@ -1,10 +1,10 @@
-import { wreen_outdoortype } from '@/assets/images'
+import { wreen_actionname, wreen_busylady, wreen_coffee_leaf } from '@/assets/images'
 import { ScriptCard } from '@/components'
 import Counter from '@/components/Counter'
 import { scripts } from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
-import { IoNewspaperOutline, IoPeopleOutline, IoVideocamOutline } from 'react-icons/io5'
+import { IoChatbubble, IoNewspaperOutline, IoPeopleOutline, IoShare, IoShareSocial, IoThumbsUp, IoVideocamOutline } from 'react-icons/io5'
 import { FaChevronRight, FaClapperboard } from 'react-icons/fa6'
 // import wreen_videobg2 from "@/assets/videos/wreen_videobg2.mp4"
 
@@ -25,7 +25,7 @@ export default function Home() {
             <p className="text-sky-50 opacity-50 text-sm font-light leading-loose max-w-md">Fleen is the world&apos;s biggest meeting point for script writers and buyers to connect in a secure, seamless and purposeful manner for an exchange of talent and ideas for money and discovery</p>
             <div className="py-5 flex gap-3">
               <Link href="/login" className="w-max bg-sky-500 hover:bg-slate-700 rounded-full text-white text-sm font-bold flex items-center py-3 px-9">Get Started</Link>
-              <Link href="/plans" className="w-max hover:bg-slate-700 bg-sky-50 text-sky-500 rounded-full hover:text-white text-sm font-bold flex items-center py-3 px-9">Show Plans</Link>
+              <Link href="/scripts/82934626" className="w-max hover:bg-slate-700 bg-sky-50 text-sky-500 rounded-full hover:text-white text-sm font-bold flex items-center py-3 px-9">Sample Script</Link>
             </div>
           </div>
           <div className="font-exhibition p-5 text-white relative">
@@ -51,7 +51,7 @@ export default function Home() {
               <aside key={id} className="flex flex-col items-center text-center sm:gap-1">
                 <div className="w-10 sm:w-20 md:w-16 h-10 sm:h-20 md:h-16 rounded-lg grid place-items-center bg-primary/20">{icon}</div>
                 {/* <h2 className="text-base sm:text-xl text-sky-800 font-bold">{total}</h2> */}
-                <Counter key={id} className={'text-base sm:text-xl text-sky-800 font-bold'} end={total} speed={i === 0 ? 'slow' : 'fast'} tag={'+'} />
+                <Counter key={id} className={'text-base sm:text-xl text-sky-800 font-bold'} end={total} speed={i === 2 ? 'fast' : 'slow'} tag={'+'} />
                 <p className="text-xs sm:text-sm text-primary font-light">{text}</p>
               </aside>
             ))
@@ -75,23 +75,14 @@ export default function Home() {
       </section>
       <section className="py-10 bg-sky-50 relative px-4 overflow-x-hidden">
         <div className="container mx-auto flex flex-col gap-5 py-5 relative z-20">
-          <div className="col-span-2 flex items-center justify-center gap-2 mx-auto py-5">
-            {
-              ["Action", "Comedy", "Documentary", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science", "Fiction", "Thriller"].map((genre, i) => (
-                <button key={i} className={`${i === 0 ? 'bg-dark text-white' : 'bg-white'} text-primary hover:bg-dark hover:text-white rounded-[2rem] py-2 px-5 cursor-pointer text-xs sm:text-sm shadow-xl hover:shadow-dark/40`}>{genre}</button>
-              ))
-            }
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="text-sky-700 text-center text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-xl mx-auto pt-4 pb-6">Our Featured Script</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-2">
             {
-              scripts.slice(0,9).map(script => (
+              scripts.slice(0, 8).map(script => (
                 <ScriptCard key={script.id} {...script} />
               ))
-            }
-            {
-              // scripts.map(script => (
-              //   <ScriptCard key={script.id} {...script} />
-              // ))
             }
           </div>
           <Link href="/scripts" className="group flex justify-center items-center py-4 text-sm md:text-base text-primary w-max mx-auto px-5">See More <FaChevronRight className='group-hover:translate-x-2 ml-1 mt-[.1rem] text-xs transition-all duration-300' /></Link>
@@ -106,19 +97,6 @@ export default function Home() {
           </div> */}
         </div>
       </section>
-      {/* <section className="py-20 bg-white relative px-4">
-        <div className="container mx-auto grid md:grid-cols-2 py-10 relative z-20">
-          <div className="flex flex-col justify-center gap-4">
-            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
-          </div>
-          <div className="flex flex-col justify-center gap-4">
-            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
-          </div>
-          <div className="flex flex-col justify-center gap-4">
-            <h2 className="text-sky-50 text-center sm:text-left text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium sm:text-light leading-loose max-w-lg">We make Talent Exhibition and Discovery Easy</h2>
-          </div>
-        </div>
-      </section> */}
     </main>
   )
 }

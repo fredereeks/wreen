@@ -51,16 +51,16 @@ export default function Header() {
                         <Link href="/login" className="relative flex gap-2 items-center self-center md:rounded-lg w-full md:w-max md:ml-5 px-5 md:px-7 py-2 h-max bg-primary text-white text-sm">Login</Link>    
                     </ul>
                 </nav>
-                <aside className="flex-1 flex gap-2 items-center">
+                <aside className="ml-auto md:w-max flex gap-2 items-center">
                   <div className={`w-full md:w-max ${searchShow ? 'overflow-hidden max-h-[1000%]' : 'max-h-0 overflow-hidden md:overflow-visible md:max-h-[100%]'}`}>
                       <form action="" className="text-white rounded-md p-2 flex gap-2 items-center">
                           <button type="submit" className="rounded-full text-slate-300 bg-transparent grid place-items-center cursor-pointer">
                               <IoSearchOutline className="text-white text-sm sm:text-base opacity-50" />
                           </button>
-                          <input type="search" placeholder={"Search for a Script..."} required className="placeholder:font-light outline-0 border-0 text-slate-400 text-sm flex-1 bg-transparent font-medium placeholder:text-slate-400 pr-2" />
+                          <input type="search" placeholder={"Search for a Script..."} required className="placeholder:font-light outline-none border-0 text-slate-400 text-sm flex-1 bg-transparent font-medium placeholder:text-slate-400 pr-2" />
                       </form>
                   </div>
-                  <div className="relative md:hidden flex gap-2 items-center p-1">
+                  <div className="relative md:hidden flex gap-2 items-center pr-4 md:p-1">
                       <div className="p-1 cursor-pointer" onClick={() => setSearchShow(prev => !prev)}>
                           <IoSearchOutline className={`text-slate-400 text-base`} />
                       </div>

@@ -20,7 +20,7 @@ export default function Footer() {
             <li className="text-xs sm:text-sm md:text-base text-white opacity-70 py-1"><Link href={'/contact'} className="text-inherit">Contact</Link></li>
           </ul>
           <ul className="flex flex-col sm:justify-self-center sm:pl-8">
-            <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl py-2">Patents</h2>
+            <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl py-2">Company</h2>
             <li className="text-xs sm:text-sm md:text-base text-white opacity-70 py-1"><Link href={'/legal'} className="text-inherit">Legal</Link></li>
             <li className="text-xs sm:text-sm md:text-base text-white opacity-70 py-1"><Link href={'/privacy-policy'} className="text-inherit">Privacy Policy</Link></li>
             <li className="text-xs sm:text-sm md:text-base text-white opacity-70 py-1"><Link href={'/term-of-service'} className="text-inherit">Terms of Service</Link></li>
