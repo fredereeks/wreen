@@ -6,7 +6,7 @@ import { wreen_coffee_leaf, wreen_busylady, wreen_action, wreen_actionname, wree
 import { scripts } from '@/data'
 import { ScriptCard } from '@/components'
 import { FaStarHalfAlt } from 'react-icons/fa'
-import { FaStar } from 'react-icons/fa6'
+import { FaSackDollar, FaStar } from 'react-icons/fa6'
 
 
 const fetchScript = async (id) => {
@@ -29,7 +29,7 @@ export default async function page({ params: { id } }) {
                         <div className="relative rounded-lg overflow-hidden h-80 md:h-full w-full">
                             <Image className="object-cover left-0 top-0 overlay" alt={"Coffee Cup under a Tree"} src={data.image} fill={true} />
                         </div>
-                        <aside className="border-t border-t-slate-300/20 border-b border-b-slate-300/20 p-2 flex items-center justify-between gap-3">
+                        <aside className="border-t border-t-slate-300/20 border-b border-b-slate-300/20 py-2 sm:px-2 flex items-center justify-between gap-3">
                             <div className="flex items-center gap-2">
                                 <div className="h-10 w-10 sm:h-16 sm:w-16 rounded-full overflow-hidden bg-primary font-bold text-3xl text-white grid place-items-center relative flex-shrink-0">
                                     <Image className="object-cover left-0 top-0 overlay" alt={"Coffee Cup under a Tree"} src={authorImage} fill={true} />
@@ -39,7 +39,7 @@ export default async function page({ params: { id } }) {
                                     <Link href={`/scripts/writer/82a34-234ad-234ya-7bu234`} className="text-sky-50 opacity-90 text-[.65rem] sm:text-xs font-light leading-loose max-w-md">View all Scripts by this Writer</Link>
                                 </div>
                             </div>
-                            <button className="transition-all text-xs rounded-sm bg-red-500 hover:bg-red-600 text-white py-1 md:py-3 px-2 md:px-4">Follow {data?.author.split(" ")[1] || data?.author.split(" ")[0]}</button>
+                            <button className="transition-all text-[.6rem] sm:text-xs rounded-sm bg-red-500 hover:bg-red-600 text-white py-1 md:py-3 px-2 md:px-4">Follow {data?.author.split(" ")[1] || data?.author.split(" ")[0]}</button>
                         </aside>
                     </div>
                     <div className="flex flex-col gap-3">
@@ -63,8 +63,8 @@ export default async function page({ params: { id } }) {
                             <p style={{ lineHeight: 1.8 }} className="text-slate-400 dark:text-slate-300 text-sm sm:text-base leading-loose text-justify pt-4">{data?.title} is a SiPT applications, software development kits (SDKs) and other SiPT products may contain software available under open source or free software licenses (“Open Source Software”). The SiPT Terms of Use do not alter any rights or obligations you may have under those Open Source Software licenses. Additional information about Open Source Software, including required acknowledgements, license terms and notices, can be found below.</p>
                         </aside>
                         <aside className="px-4 py-2 flex items-center justify-between gap-3 text-slate-300">
-                            <button className="flex items-center gap-2 py-2 px-4 rounded-md text-xs sm:text-base bg-dark/80">
-                                <IoThumbsUp className='text-inherit text-xs' /> Like
+                            <button className="flex-1 flex items-center gap-2 py-2 px-4 rounded-md text-white text-xs sm:text-base bg-primary">
+                                <FaSackDollar className='text-inherit text-xs' /> Buy
                             </button>
                             <button className="flex items-center gap-2 py-2 px-4 rounded-md text-xs sm:text-base bg-dark/80">
                                 <IoChatbubble className='text-inherit text-xs' /> Comment

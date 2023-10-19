@@ -51,7 +51,7 @@ export default function Header() {
                         <Link href="/login" className="relative flex gap-2 items-center self-center md:rounded-lg w-full md:w-max md:ml-5 px-5 md:px-7 py-2 h-max bg-primary text-white text-sm">Login</Link>    
                     </ul>
                 </nav>
-                <aside className="ml-auto md:w-max flex gap-2 items-center justify-center pr-8 sm:pr-0">
+                <aside className="relative z-50 ml-auto w-[4rem] sm:w-max md:w-max flex gap-2 items-center justify-center sm:pr-0">
                   <div className={`w-full md:w-max ${searchShow ? 'overflow-hidden max-h-[1000%]' : 'max-h-0 overflow-hidden md:overflow-visible md:max-h-[100%]'}`}>
                       <form action="" className="text-white rounded-md p-2 flex gap-2 items-center">
                           <button type="submit" className="rounded-full text-slate-300 bg-transparent grid place-items-center cursor-pointer">
