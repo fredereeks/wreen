@@ -23,7 +23,7 @@ export default async function page({ params: { id } }) {
     return (
         <main className="bg-darker flex flex-col gap-4 py-20 min-h-screen relative after-overlay after:bg-gradient-to-b after:from-darker/80 after:via-darker/80 after:to-darker">
             <Image className="object-cover left-0 top-0 overlay" alt={"Coffee Cup under a Tree"} src={wreen_coffee_leaf} fill={true} />
-            <section className="px-4 py-20">
+            <section className="px-4 pt-20 pb-5">
                 <div className="container mx-auto grid md:grid-cols-2 gap-4 relative z-20">
                     <div className="flex flex-col gap-4">
                         <div className="relative rounded-lg overflow-hidden h-80 md:h-full w-full">
@@ -42,7 +42,7 @@ export default async function page({ params: { id } }) {
                             <button className="transition-all text-xs rounded-sm bg-red-500 hover:bg-red-600 text-white py-1 md:py-3 px-2 md:px-4">Follow {data?.author.split(" ")[1] || data?.author.split(" ")[0]}</button>
                         </aside>
                     </div>
-                    <div className="flex flex-col gap-3 px-4">
+                    <div className="flex flex-col gap-3">
                         <aside className="flex flex-col gap-2">
                             <h2 className="text-sky-50 dark:text-slate-500 text-left text-3xl sm:text-4xl font-medium sm:text-light leading-tight pb-2 max-w-lg">{data?.title}</h2>
                             <div className="flex gap-[.15rem] sm:gap-2 items-center flex-wrap md:flex-nowrap pr-4">

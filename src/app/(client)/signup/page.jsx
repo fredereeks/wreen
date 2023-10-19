@@ -35,7 +35,7 @@ export default function page() {
       <section className="relative py-20 px-4 z-50">
 
         <div className="container mx-auto grid md:grid-cols-2 relative z-20">
-          <div className="p-5 text-white relative">
+          <div className="py-5 text-white relative">
             <div className="hidden md:flex h-8 bg-red-500 w-60 absolute top-[80%] left-3/4 lg:left-[100%]"></div>
             <SignupForm key={9200} handleSubmit={handleSubmit} />
           </div>
